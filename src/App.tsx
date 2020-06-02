@@ -1,7 +1,17 @@
 import React from 'react';
 
-function App() {
-  return <h1> Countdown Timer</h1>;
-}
+import Main from './domain/Main';
+import GlobalStyle from './styles/global';
+
+import './styles/global.css';
+
+const App: React.FC = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Main />
+    </>
+  );
+};
 
 export default App;
