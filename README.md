@@ -1,30 +1,39 @@
-# Countdown Timer - ReactJS
+## Countdown Timer React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Description:
 
-## Available Scripts
+A Countdown timer made with React.
 
-In the project directory, you can run:
+An application used to never forget the time of taking medicine (in minutes).
 
-### `yarn start`
+## Project Screen Shot(s)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[ Main Screen ](/assets/images/countdown_timer.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[ Usability ](/assets/images/countdown_timer.gif)
 
-### `yarn test`
+## Installation and Setup Instructions
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone down this repository. You will need `node` and `npm` or `yarn` installed globally on your machine.
 
-### `yarn build`
+Installation:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install`
+or
+`yarn`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To Run Test Suite:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm test`
+or
+`yarn test`
+
+To Start Server:
+
+`npm start`
+or
+`yarn start`
+
+To Visit App:
+
+`localhost:3000`
