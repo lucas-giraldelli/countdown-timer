@@ -25,17 +25,21 @@ const App: React.FC = () => {
 
   return (
     <>
+      {/** Component for rendering the tooltips */}
       <ReactTooltip place="bottom" effect="solid" />
       <Header>
         <FiClock className="logo" size={155} color="#FED766" />
         <h1>Countdown Timer</h1>
         <form>
+          {/** Component for getting user input */}
           <Input
             value={inputValue}
             onChange={(e) => handleInputValue(e.target.value)}
             placeholder="Please type a minute"
             disabled={disabled}
           />
+
+          {/** Component for starting the timer */}
           <Button
             data-testid="startButtonEl"
             data-tip="Start"
@@ -43,10 +47,13 @@ const App: React.FC = () => {
           >
             <FiPlay size={35} />
           </Button>
+
+          {/** Component for restarting the timer */}
           <Button data-tip="Reset" onClick={() => handleRestartTimer()}>
             <FiRotateCcw size={35} />
           </Button>
         </form>
+        {/** Error html that will be rendered with input is invalid */}
         {error && (
           <span className="errorStyle">
             Please insert a number in MM or M and higher than 0.
@@ -54,6 +61,7 @@ const App: React.FC = () => {
         )}
       </Header>
       <Main>
+        {/** Component for the timer itself */}
         {startTimer ? (
           <Timer
             className="timer"
@@ -64,6 +72,8 @@ const App: React.FC = () => {
           <span>00:00</span>
         )}
       </Main>
+
+      {/** Each speed button the timer */}
       <SpeedButtons>
         <Button
           data-tip="Increase speed"

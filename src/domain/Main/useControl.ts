@@ -21,14 +21,18 @@ export const useControl = (): useInputReturn => {
   const [error, setError] = useState(false);
 
   const handleInputValue = useCallback((value: string): void => {
+    // just set the state(inputValue) to the value from input
     setInputValue(value);
   }, []);
 
   const handleStartTimer = useCallback((): void => {
-    // check if input value (MM/M) is a valid number
+    // check if input value (MM/M) is valid
     const isNumber = inputValue.match(/^\d{1,2}$/);
+
     // check if input value is higher than 0
     const onlyZeros = inputValue.match(/^0{1,2}$/);
+
+    // if NaN or only zeros, then throw error and clear input
     if (!isNumber || onlyZeros) {
       setError(true);
       setInputValue('');
@@ -40,6 +44,7 @@ export const useControl = (): useInputReturn => {
   }, [inputValue]);
 
   const handleRestartTimer = useCallback((): void => {
+    // just restarts everything
     setTimerSpeed(1.0);
     setDisabled(false);
     setStartTimer(false);
@@ -48,12 +53,15 @@ export const useControl = (): useInputReturn => {
   }, []);
 
   const handleFormatValue = useCallback((inputNumber: string): number => {
-    // remove leading zeros
+    // remove any leading zeros
     const formatedValue = inputNumber.replace(/^0+/g, '');
+
+    // and give back the string transformed in number
     return +formatedValue;
   }, []);
 
   const handlePassTimerSpeed = useCallback((speedValue: number): void => {
+    // just set the state(timerSpeed) to the value from input
     setTimerSpeed(speedValue);
   }, []);
 
