@@ -16,17 +16,10 @@ const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
   const [status, setStatus] = useState(true);
   const [redText, setRedText] = useState(false);
   const [blink, setBlink] = useState(false);
+  const [pause, setPause] = useState(false);
+  const [resume, setResume] = useState(false);
 
-  const {
-    halfWayEnd,
-    pause,
-    resume,
-    minutes,
-    seconds,
-    setPause,
-    setResume,
-    everySecondCB,
-  } = useTimer(timer);
+  const { halfWayEnd, minutes, seconds, everySecondCB } = useTimer(timer);
 
   useEffect((): (() => void) => {
     // creates the loop based on minutes:seconds
