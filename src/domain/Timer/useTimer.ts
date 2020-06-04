@@ -18,7 +18,7 @@ export const useTimer = (timer: number): useTimerReturn => {
     const odd = halfMinute.toString().match(/^\d{1,2}\.\d/);
 
     // if the number is even
-    if (!odd && minutes === halfMinute && seconds === 0) {
+    if (!odd && minutes === halfMinute && seconds === 1) {
       setHalfWayEnd(true);
     }
 
