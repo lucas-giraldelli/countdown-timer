@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { FiPause, FiSkipForward } from 'react-icons/fi';
 import { useTimer } from './useTimer';
 
