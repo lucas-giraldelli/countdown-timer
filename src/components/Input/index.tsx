@@ -16,7 +16,12 @@ const Input: React.FC<InputProps> = ({ icon: Icon, disabled, ...rest }) => {
       {Icon && <Icon size={30} />}
       <label htmlFor={id}>
         {labelText ? `${labelText}:` : ''}
-        <input disabled={disabled} {...rest} type="text" />
+        <input
+          data-testid="inputEl"
+          disabled={disabled}
+          {...rest}
+          type="text"
+        />
       </label>
     </Container>
   );
