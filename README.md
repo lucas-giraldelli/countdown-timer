@@ -1,14 +1,14 @@
 ## Countdown Timer React
 
-#### Description:
-
 A Countdown timer made with React.
 
 An application used to never forget the time of taking medicine (in minutes).
 
-## Project Screen Shot(s)
+## Project Screen Shots
 
 ![ Main Screen ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.png?token=ALLGIDAZBXU2ZF4ZI4QFDXC63BXNQ)
+
+## Project Running
 
 ![ Usability ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.gif?token=ALLGIDCXE32O2WPECFHCM7263BXI4)
 
@@ -27,6 +27,8 @@ To Run Test Suite:
 `npm test`
 or
 `yarn test`
+
+![ Tests Screenshot ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer_tests.png?token=ALLGIDHWNZKNFRR4BTLKG3C63BXWY)
 
 To Start Server:
 
