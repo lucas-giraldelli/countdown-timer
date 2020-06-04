@@ -8,9 +8,9 @@ An application used to never forget the time of taking medicine (in minutes).
 
 ## Project Screen Shot(s)
 
-[ Main Screen ](/assets/images/countdown_timer.png)
+![ Main Screen ](/assets/images/countdown_timer.png)
 
-[ Usability ](/assets/images/countdown_timer.gif)
+![ Usability ](/assets/images/countdown_timer.gif)
 
 ## Installation and Setup Instructions
 
