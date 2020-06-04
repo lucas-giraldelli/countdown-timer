@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer, useCallback } from 'react';
 import { FiPause, FiSkipForward } from 'react-icons/fi';
 import { useTimer } from './useTimer';
 
@@ -13,13 +13,9 @@ interface TimerProps {
 }
 
 const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
-  const [status, setStatus] = useState(true);
-  const [redText, setRedText] = useState(false);
-  const [blink, setBlink] = useState(false);
-  const [pause, setPause] = useState(false);
-  const [resume, setResume] = useState(false);
+  const { minutes, seconds, everySecondCB, state, dispatch } = useTimer(timer);
 
-  const { halfWayEnd, minutes, seconds, everySecondCB } = useTimer(timer);
+  const { blink, halfWayEnd, pause, resume, redText, status } = state;
 
   useEffect((): (() => void) => {
     // creates the loop based on minutes:seconds
@@ -30,10 +26,10 @@ const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
     // and seconds === 0 set red color
     if (minutes === 0) {
       if (seconds === 20) {
-        setRedText(true);
+        dispatch({ type: 'red_text' });
       }
       if (seconds === 10) {
-        setBlink(true);
+        dispatch({ type: 'blink' });
       }
     }
 
@@ -45,16 +41,14 @@ const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
     // if resume is set to true, then pause is no more,
     // then restart the loop and resets resume variable, because no more resuming.
     if (resume) {
-      setPause(false);
+      dispatch({ type: 'clear_pause' });
       everySecond = setInterval(() => everySecondCB(), 1000 / speed);
-      setResume(false);
+      dispatch({ type: 'clear_resume' });
     }
 
     // if ends (sec && min equal to 0) then clear any effect plus interval
     if (seconds === 0 && minutes === 0) {
-      setBlink(false);
-      setRedText(false);
-      setStatus(false);
+      dispatch({ type: 'end' });
       clearInterval(everySecond);
     }
 
@@ -62,16 +56,7 @@ const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
     return function cleanup(): void {
       clearInterval(everySecond);
     };
-  }, [
-    everySecondCB,
-    minutes,
-    pause,
-    resume,
-    seconds,
-    setPause,
-    setResume,
-    speed,
-  ]);
+  }, [dispatch, everySecondCB, minutes, pause, resume, seconds, speed]);
 
   return (
     <TimerContainer data-testid="timerEl" className={className}>
@@ -87,9 +72,12 @@ const Timer: React.FC<TimerProps> = ({ timer, speed, className }) => {
       </TimerNumbers>
       <Button id="pauseResumeButton">
         {!pause ? (
-          <FiPause size={45} onClick={() => setPause(true)} />
+          <FiPause size={45} onClick={() => dispatch({ type: 'pause' })} />
         ) : (
-          <FiSkipForward size={45} onClick={() => setResume(true)} />
+          <FiSkipForward
+            size={45}
+            onClick={() => dispatch({ type: 'resume' })}
+          />
         )}
       </Button>
     </TimerContainer>

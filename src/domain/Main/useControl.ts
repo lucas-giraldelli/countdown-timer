@@ -1,80 +1,73 @@
-import { useState, useCallback } from 'react';
+import { useReducer, Dispatch } from 'react';
 
-interface useInputReturn {
+interface useControlProps {
+  state: controlState;
+  dispatch: Dispatch<controlAction>;
+}
+
+interface controlState {
   inputValue: string;
   timerSpeed: number;
   disabled: boolean;
   startTimer: boolean;
   error: boolean;
-  handleInputValue(value: string): void;
-  handleStartTimer(): void;
-  handleRestartTimer(): void;
-  handleFormatValue(inputNumber: string): number;
-  handlePassTimerSpeed(speedValue: number): void;
 }
 
-export const useControl = (): useInputReturn => {
-  const [inputValue, setInputValue] = useState('');
-  const [timerSpeed, setTimerSpeed] = useState(1.0);
-  const [disabled, setDisabled] = useState(false);
-  const [startTimer, setStartTimer] = useState(false);
-  const [error, setError] = useState(false);
+type controlAction =
+  | { type: 'start' | 'restart' | 'error' }
+  | { type: 'field'; fieldName: string; payload: string | number | boolean };
 
-  const handleInputValue = useCallback((value: string): void => {
-    // just set the state(inputValue) to the value from input
-    setInputValue(value);
-  }, []);
-
-  const handleStartTimer = useCallback((): void => {
-    // check if input value (MM/M) is valid
-    const isNumber = inputValue.match(/^\d{1,2}$/);
-
-    // check if input value is higher than 0
-    const onlyZeros = inputValue.match(/^0{1,2}$/);
-
-    // if NaN or only zeros, then throw error and clear input
-    if (!isNumber || onlyZeros) {
-      setError(true);
-      setInputValue('');
-    } else {
-      setError(false);
-      setDisabled(true);
-      setStartTimer(true);
+function controlReducer(
+  state: controlState,
+  action: controlAction,
+): controlState {
+  switch (action.type) {
+    case 'field': {
+      return {
+        ...state,
+        [action.fieldName]: action.payload,
+      };
     }
-  }, [inputValue]);
+    case 'start': {
+      return {
+        ...state,
+        error: false,
+        disabled: true,
+        startTimer: true,
+      };
+    }
+    case 'restart': {
+      return {
+        ...state,
+        timerSpeed: 1.0,
+        disabled: false,
+        startTimer: false,
+        inputValue: '',
+        error: false,
+      };
+    }
+    case 'error': {
+      return {
+        ...state,
+        error: true,
+        inputValue: '',
+      };
+    }
+    default:
+      return state;
+  }
+}
 
-  const handleRestartTimer = useCallback((): void => {
-    // just restarts everything
-    setTimerSpeed(1.0);
-    setDisabled(false);
-    setStartTimer(false);
-    setInputValue('');
-    setError(false);
-  }, []);
+const initialState: controlState = {
+  inputValue: '',
+  timerSpeed: 1.0,
+  disabled: false,
+  startTimer: false,
+  error: false,
+};
 
-  const handleFormatValue = useCallback((inputNumber: string): number => {
-    // remove any leading zeros
-    const formatedValue = inputNumber.replace(/^0+/g, '');
+export const useControl = (): useControlProps => {
+  const [state, dispatch] = useReducer(controlReducer, initialState);
 
-    // and give back the string transformed in number
-    return +formatedValue;
-  }, []);
-
-  const handlePassTimerSpeed = useCallback((speedValue: number): void => {
-    // just set the state(timerSpeed) to the value from input
-    setTimerSpeed(speedValue);
-  }, []);
-
-  return {
-    inputValue,
-    timerSpeed,
-    disabled,
-    startTimer,
-    error,
-    handleInputValue,
-    handleStartTimer,
-    handleRestartTimer,
-    handleFormatValue,
-    handlePassTimerSpeed,
-  };
+  return { state, dispatch };
 };

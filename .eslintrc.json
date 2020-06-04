@@ -32,6 +32,7 @@
   "rules": {
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-newline": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
