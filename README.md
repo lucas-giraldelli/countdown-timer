@@ -6,11 +6,11 @@ An application used to never forget the time of taking medicine (in minutes).
 
 ## Project Screen Shots
 
-![ Main Screen ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.png?token=ALLGIDH74OLC6MKGODQCZAC63BYZK)
+![ Main Screen ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.png?token=ALLGIDEMQPACS7NRVLACEWK63B4WS)
 
 ## Project Running
 
-![ Usability ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.gif?token=ALLGIDEWJCKHIJJU4Q6OTN263BYVM)
+![ Usability ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.gif?token=ALLGIDC5GSUHSEEY35V3AQC63B4XE)
 
 When the timer ends, just click on restart.
 
@@ -30,7 +30,7 @@ To Run Test Suite:
 or
 `yarn test`
 
-![ Tests Screenshot ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer_tests.png?token=ALLGIDBCLKJPAVW2SPD4UU263BYYO)
+![ Tests Screenshot ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer_tests.png?token=ALLGIDCP6TC7JOSVHVNKKM263B4XW)
 
 To Start Server:
 
