@@ -12,6 +12,8 @@ An application used to never forget the time of taking medicine (in minutes).
 
 ![ Usability ](https://raw.githubusercontent.com/lucas-giraldelli/countdown-timer/master/src/assets/images/countdown_timer.gif?token=ALLGIDCXE32O2WPECFHCM7263BXI4)
 
+When the timer ends, just click on restart.
+
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `npm` or `yarn` installed globally on your machine.
