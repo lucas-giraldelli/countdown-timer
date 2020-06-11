@@ -11,24 +11,24 @@
 / slow down the countdown, pause, and resume.
 
 ## Requirements
-⋅⋅*The user should be able to enter a # of minutes (positive integer) and click a “Start”
+⋅*The user should be able to enter a # of minutes (positive integer) and click a “Start”
 button to initialize the countdown.<br/>
-⋅⋅*Timer format: MM:SS<br/>
-⋅⋅*The user should be able to pause & resume the countdown using pause / resume
+⋅*Timer format: MM:SS<br/>
+⋅*The user should be able to pause & resume the countdown using pause / resume
 buttons.<br/>
-⋅⋅*While the countdown timer is active, the user should be able to speed up / slow down
+⋅*While the countdown timer is active, the user should be able to speed up / slow down
 the speed at the following rates:<br/>
 &nbsp;&nbsp;⋅⋅*1.0X (normal speed, selected by default)<br/>
 &nbsp;&nbsp;⋅⋅*1.5X<br/>
 &nbsp;&nbsp;⋅⋅*2X<br/>
-⋅⋅* When half of the selected duration has been passed, display a string of text above the
+⋅* When half of the selected duration has been passed, display a string of text above the
 countdown timer reading: “More than halfway there!”<br/>
 ⋅⋅*When the countdown timer reaches 0, this text should change to: “Time’s up!”<br/>
 ⋅⋅*When the countdown is within 20 seconds of ending, the countdown timer text should
 turn red.<br/>
-⋅⋅*At 10 seconds, the text should start blinking.<br/>
-⋅⋅*Functionality should be appropriately divided into well-defined components.<br/>
-⋅⋅*The look of the countdown timer should have a production-ready clean/modern
+⋅*At 10 seconds, the text should start blinking.<br/>
+⋅*Functionality should be appropriately divided into well-defined components.<br/>
+⋅*The look of the countdown timer should have a production-ready clean/modern
 aesthetic. Creatively stylize the elements as you see fit.<br/>
 
 ## Project Screen Shots
