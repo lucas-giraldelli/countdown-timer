@@ -12,27 +12,24 @@ Build a countdown timer SPA using React JS or React Native with controls to add 
 
 ## Requirements
 ● The user should be able to enter a # of minutes (positive integer) and click a “Start”
-button to initialize the countdown.
-● Timer format: MM:SS
+button to initialize the countdown.<br/>
+● Timer format: MM:SS<br/>
 ● The user should be able to pause & resume the countdown using pause / resume
-buttons.
+buttons.<br/>
 ● While the countdown timer is active, the user should be able to speed up / slow down
-the speed at the following rates:
-○ 1.0X (normal speed, selected by default)
-○ 1.5X
-○ 2X
+the speed at the following rates:<br/>
+  ○ 1.0X (normal speed, selected by default)<br/>
+  ○ 1.5X<br/>
+  ○ 2X<br/>
 ● When half of the selected duration has been passed, display a string of text above the
-countdown timer reading: “More than halfway there!”
-○ When the countdown timer reaches 0, this text should change to: “Time’s up!”
+countdown timer reading: “More than halfway there!”<br/>
+● When the countdown timer reaches 0, this text should change to: “Time’s up!”<br/>
 ● When the countdown is within 20 seconds of ending, the countdown timer text should
-turn red.
-● At 10 seconds, the text should start blinking.
-● Functionality should be appropriately divided into well-defined components.
+turn red.<br/>
+● At 10 seconds, the text should start blinking.<br/>
+● Functionality should be appropriately divided into well-defined components.<br/>
 ● The look of the countdown timer should have a production-ready clean/modern
-aesthetic. Creatively stylize the elements as you see fit.
-● Include screenshots in a README.md file.
-● The solution should be submitted as per instructions by the issuer in the form of a public
-GitHub repository.
+aesthetic. Creatively stylize the elements as you see fit.<br/>
 
 ## Project Screen Shots
 
