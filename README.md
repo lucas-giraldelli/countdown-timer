@@ -14,8 +14,6 @@ Build a countdown timer SPA using React JS or React Native with controls to add 
 
 - The user should be able to enter a # of minutes (positive integer) and click a “Start”
 button to initialize the countdown.
-- The user should be able to enter a # of minutes (positive integer) and click a “Start”
-button to initialize the countdown.
 - Timer format: MM:SS
 - The user should be able to pause & resume the countdown using pause / resume
 buttons.
