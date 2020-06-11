@@ -18,9 +18,9 @@ button to initialize the countdown.<br/>
 buttons.<br/>
 ● While the countdown timer is active, the user should be able to speed up / slow down
 the speed at the following rates:<br/>
-  ○ 1.0X (normal speed, selected by default)<br/>
-  ○ 1.5X<br/>
-  ○ 2X<br/>
+&nbsp;&nbsp;- 1.0X (normal speed, selected by default)<br/>
+&nbsp;&nbsp;- 1.5X<br/>
+&nbsp;&nbsp;- 2X<br/>
 ● When half of the selected duration has been passed, display a string of text above the
 countdown timer reading: “More than halfway there!”<br/>
 ● When the countdown timer reaches 0, this text should change to: “Time’s up!”<br/>
