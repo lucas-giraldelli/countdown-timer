@@ -1,5 +1,7 @@
 ## Countdown Timer React
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/367f5a71-27fb-4ac5-ba66-4966e8c1e96b/deploy-status)](https://app.netlify.com/sites/countdown-timer-react/deploys)
+
 A Countdown timer made with React.
 
 An application used to never forget the time of taking medicine (in minutes).
