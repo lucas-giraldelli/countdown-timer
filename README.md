@@ -6,6 +6,9 @@
 A Countdown timer made with React.
 An application used to never forget the time of taking medicine (in minutes).
 
+## Kanban board
+![ Main Screen ](/assets/images/kanban_countdown_timer.png)
+
 ## Problem
 Build a countdown timer SPA using React JS or React Native with controls to add time, speed up
 / slow down the countdown, pause, and resume.
